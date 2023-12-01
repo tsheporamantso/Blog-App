@@ -104,6 +104,11 @@ GEM
     drb (2.2.0)
       ruby2_keywords
     erubi (1.12.0)
+    factory_bot (6.4.2)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.4.2)
+      factory_bot (~> 6.4)
+      railties (>= 5.0.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.1)
@@ -119,7 +124,7 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
-    json (2.6.3)
+    json (2.7.0)
     language_server-protocol (3.17.0.3)
     loofah (2.22.0)
       crass (~> 1.0.2)
@@ -135,7 +140,7 @@ GEM
     minitest (5.20.0)
     msgpack (1.7.2)
     mutex_m (0.2.0)
-    net-imap (0.4.6)
+    net-imap (0.4.7)
       date
       net-protocol
     net-pop (0.1.2)
@@ -144,7 +149,7 @@ GEM
       timeout
     net-smtp (0.4.0)
       net-protocol
-    nio4r (2.6.1)
+    nio4r (2.7.0)
     nokogiri (1.15.5-x64-mingw-ucrt)
       racc (~> 1.4)
     nokogiri (1.15.5-x86_64-linux)
@@ -203,7 +208,7 @@ GEM
     rdoc (6.6.0)
       psych (>= 4.0.0)
     regexp_parser (2.8.2)
-    reline (0.4.0)
+    reline (0.4.1)
       io-console (~> 0.5)
     rexml (3.2.6)
     rspec-core (3.12.2)
@@ -286,6 +291,7 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  factory_bot_rails
   importmap-rails
   jbuilder
   pg (~> 1.1)
