@@ -1,8 +1,8 @@
-require 'rails_helper.rb'
+require 'rails_helper'
 
 RSpec.describe User, type: :model do
   it 'is not valid without a name' do
-    user = FactoryBot.build(:user, name:nil)
+    user = FactoryBot.build(:user, name: nil)
     expect(user).not_to be_valid
   end
 
