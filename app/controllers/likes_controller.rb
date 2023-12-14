@@ -11,9 +11,9 @@ class LikesController < ApplicationController
     @like = @post.likes.build(user: current_user)
 
     if @like.save
-        redirect_to user_post_path(@user, @post), notice: 'Like was sucessfully created.'
+      redirect_to user_post_path(@user, @post), notice: 'Like was sucessfully created.'
     else
-        render :new
+      render :new
     end
   end
 end
