@@ -12,6 +12,7 @@
   <% @posts.limit(2).each do |post| %>
     <div class="post">
       <h4>Post</h4>
+      <h4><%= link_to post.title, user_post_path(@user, post) %></h4>
       <p><%= post.text %></p>
       <p class="count">Comments: <%= post.comments.count %> | Likes: <%= post.likes.count %></p>
     </div>
