@@ -43,5 +43,17 @@ RSpec.describe 'User show page', type: :feature do
       click_link('See all posts')
       expect(page).to have_current_path(user_posts_path(user))
     end
+
+    it 'displays user posts likes count' do
+      posts.each do |post|
+        expect(page).to have_content(post.likes_counter)
+      end
+    end
+
+    it 'displays user posts comments count' do
+      posts.each do |post|
+        expect(page).to have_content(post.comments_counter)
+      end
+    end
   end
 end
