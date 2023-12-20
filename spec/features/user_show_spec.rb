@@ -29,5 +29,9 @@ RSpec.describe 'User show page', type: :feature do
     it 'displays user three post' do
       expect(page).to have_css('div.post', count: 3)
     end
+
+    it 'displays view all post button' do
+      expect(page).to have_link('See all posts')
+    end
   end
 end
