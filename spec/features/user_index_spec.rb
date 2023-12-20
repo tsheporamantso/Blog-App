@@ -23,5 +23,10 @@ RSpec.describe 'User index', type: :feature do
         expect(page).to have_content(user.name)
       end
     end
+    it 'displays all users posts count' do
+      users.each do |user|
+        expect(page).to have_content(user.posts_counter)
+      end
+    end
   end 
 end
