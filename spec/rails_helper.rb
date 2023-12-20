@@ -67,4 +67,4 @@ RSpec.configure do |config|
     rspec_config.include FactoryBot::Syntax::Methods
   end
 end
-# Capybara.default_driver = :selenium_chrome
+Capybara.default_driver = :selenium_chrome
