@@ -28,5 +28,10 @@ RSpec.describe 'User index', type: :feature do
         expect(page).to have_content(user.posts_counter)
       end
     end
+    it 'redirects to user show page' do
+      find_all('a', text: users.first.name)[0].click
+      expect(page).to have_current_path(user_path(users.first))
+    end
+  end
   end 
 end
