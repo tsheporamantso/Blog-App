@@ -19,7 +19,7 @@ RSpec.describe 'User show page', type: :feature do
     end
 
     it 'displays user posts count' do
-      expect(page).to have_content(user.posts.counter)
+      expect(page).to have_content(user.posts_counter)
     end
 
     it 'displays user bio' do
@@ -30,8 +30,18 @@ RSpec.describe 'User show page', type: :feature do
       expect(page).to have_css('div.post', count: 3)
     end
 
-    it 'displays view all post button' do
+    it 'displays view all posts button' do
       expect(page).to have_link('See all posts')
+    end
+
+    it 'redirects to post show page' do
+      find_all('a', text: posts.last.title)[0].click
+      expect(page).to have_current_path(user_post_path(user, posts.last))
+    end
+
+    it 'redirects to user posts index page' do
+      click_link('See all posts')
+      expect(page).to have_current_path(user_posts_path(user))
     end
   end
 end
