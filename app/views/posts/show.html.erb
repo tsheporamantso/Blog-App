@@ -1,4 +1,9 @@
 <div class="container">
+<% flash.each do |key, value|%>
+  <div class="flash <%= key %>">
+  <%= value %> 
+<% end %>
+
   <div class="post">
     <h4>Post <%= @post.title %></h4>
     <p class="count">Comments: <%= @post.comments.count %> | Likes: <%= @post.likes.count %></p>
@@ -12,4 +17,7 @@
       </div>
     <% end %>
   </div>
+
+  <%= link_to 'Create New Comment', new_user_post_comment_path(@user, @post), class: 'button' %>
+  <%= link_to 'Like', new_user_post_like_path(@user, @post), class: 'button' %>
 </div>
