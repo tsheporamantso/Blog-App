@@ -32,16 +32,13 @@ RSpec.describe Post, type: :model do
     post = FactoryBot.create(:post, author: user)
     FactoryBot.create_list(:comment, 0, post:, created_at: 4.days.ago)
     recent_comments = FactoryBot.create_list(:comment, 0, post:)
-
     expect(post.five_most_recent_comments).to eq(recent_comments.reverse)
   end
 
   it 'updates author\'s posts_counter after save' do
     expect(user.posts_counter).to eq(0)
-
     FactoryBot.create(:post, author: user)
     user.reload
-
     expect(user.posts_counter).to eq(1)
   end
 end
