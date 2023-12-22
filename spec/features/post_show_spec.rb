@@ -15,7 +15,6 @@ RSpec.describe 'Post show page', type: :feature do
     visit user_post_path(user, post)
   end
 
-
   describe 'Post show page' do
     it 'displays post title' do
       expect(page).to have_content(post.title)
