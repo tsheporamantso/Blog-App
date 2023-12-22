@@ -3,17 +3,17 @@ require 'rails_helper'
 RSpec.describe 'Post show page', type: :feature do
   let(:user) { FactoryBot.create(:user) }
   let(:post) { FactoryBot.create(:post, author: user) }
-  let(:comments) { FactoryBot.create_list(:comment, 5, author: user, post: post) }
+  let(:comments) { FactoryBot.create_list(:comment, 5, author: user, post:) }
 
   # Test file
-before do
-  post.reload
+  before do
+    post.reload
 
-  # Create comments without explicitly specifying the author
-  FactoryBot.create_list(:comment, 5, post: post)
+    # Create comments without explicitly specifying the author
+    FactoryBot.create_list(:comment, 5, post:)
 
-  visit user_post_path(user, post)
-end
+    visit user_post_path(user, post)
+  end
 
 
   describe 'Post show page' do

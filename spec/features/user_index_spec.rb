@@ -7,7 +7,7 @@ RSpec.describe 'User index', type: :feature do
     users
     visit users_path
   end
-  
+
   describe 'User index page' do
     it 'displays correct number of users' do
       expect(page).to have_css('div.user_info', count: 5)
@@ -34,6 +34,6 @@ RSpec.describe 'User index', type: :feature do
     it 'redirects to user show page' do
       find_all('a', text: users.first.name)[0].click
       expect(page).to have_current_path(user_path(users.first))
-     end
-  end 
+    end
+  end
 end
